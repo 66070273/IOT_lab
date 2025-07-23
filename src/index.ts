@@ -6,6 +6,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const app = new Hono()
+app.get('/', (c) => c.text('HelloWorld'))
 app.route('/students', studentRoutes)
 
 const apiKey = process.env.API_SECRET_KEY
